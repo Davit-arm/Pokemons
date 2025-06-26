@@ -49,6 +49,13 @@ def attacks(message):
     else:
         bot.send_message(message.chat.id, "You have to reply to a certain person's message to attack")
 
+@bot.message_handler(commands=['feed'])
+def feedpk(message):
+    if message.from_user.username in Pokemon.pokemons.keys():
+        pok = Pokemon.pokemons[message.from_user.username]
+        bot.send_message(message.chat.id, pok.feed())
+    else:
+        bot.send_message(message.chat.id, 'you have no pokemons, to get one type /go')
 
 bot.infinity_polling(none_stop=True)
 
