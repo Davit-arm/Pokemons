@@ -1,6 +1,7 @@
 from random import randint
 import requests
 import random
+from chance import chance
 
 class Pokemon:
     pokemons = {}
@@ -15,7 +16,7 @@ class Pokemon:
         self.ability = self.get_ability()
         self.hp = random.randint(200, 400)
         self.power = random.randint(30, 60)
-
+        self.pkmclass = self.pclass()
         Pokemon.pokemons[pokemon_trainer] = self
 
     # Метод для получения картинки покемона через API
@@ -47,13 +48,30 @@ class Pokemon:
         else:
             return "error"
         
+    def pclass(self):
+        if chance == 1 or 2 or 3:
+            pkclass = 'Normal Pokemon'
+            return pkclass
+        if chance == 4:
+            pkclass = 'Wizard'
+            return pkclass
+        if  pkclass == 5:
+            pkclass = 'Fighter'
+            return pkclass
+        else:
+            return 'error'
+        
+            
+        
     # Метод класса для получения информации
     def info(self):
         pokemon_info = (
 
             f"Имя твоего покеомона: {self.name}/n"
             f"pokemon power: {self.power}/n"
-            f"pokemon: {self.hp}"
+            f"pokemon hp: {self.hp}/n"
+            f"pokemon ability {self.ab()}/n"
+            f"pokemon type {self.pcl()}"
         )
         return pokemon_info
 
@@ -61,8 +79,12 @@ class Pokemon:
     def show_img(self):
         return self.img
     
+    #class's method for getting information about ability
     def ab(self):
         return self.ability
+    
+    def pcl(self):
+        return self.pkmclass
     
     # class's method for attack
     def attack(self, enemy):
