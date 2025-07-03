@@ -14,3 +14,6 @@
 
 ###### head developer: Alexander Deryabin
 ###### most valuable developer: Davit Seraydaryan 
+![image](https://github.com/user-attachments/assets/4b8d6924-2638-40b3-a3ae-7b98f94d56ee)
+![image](https://github.com/user-attachments/assets/9a63b1d6-16e7-4a95-b7cf-f166c69b8296)
+
